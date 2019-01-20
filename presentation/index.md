@@ -91,7 +91,7 @@ $ yarn tsc file.ts
 
 # Implicit/Explicit types
 
-In TypeScript we could be explicit using types. And types could be used implicit.
+Types could be implicit or explicit.
 
 .col-6[
 Implicit type:
@@ -107,7 +107,6 @@ Explicit type:
 
 ```typescript
 let name: string;
-...
 name = 'MyName';
 ```
 

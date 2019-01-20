@@ -26,7 +26,7 @@ anyArray2 = ['b'];
 anyArray2 = 100;
 
 // tuples
-let tuple: [string, number]  = ['string1', 33];
+let tuple: [string, number] = ['string1', 33];
 tuple = [33, 'string'];
 
 // enum
@@ -36,6 +36,7 @@ enum Colors {
   GREEN = 4, // 4
   BLUE = 'BLUE', // 'BLUE'
 }
+
 let color = Colors.BLUE; // color = 'BLUE'
 color = Colors.BLACK; // color = 0
 color = Colors.GREEN; // color = 4
@@ -57,12 +58,12 @@ function noReturn(): void {
 }
 
 // arg types
-function plus(val1 :number, val2: number): number {
+function plus(val1: number, val2: number): number {
   return val1 + val2;
 }
 
 console.log(plus(1, 'string'));
-console.log(plus(1 ,2));
+console.log(plus(1, 2));
 
 // function type
 let functVar: (a: number, b: number) => number;
@@ -117,9 +118,9 @@ if (typeof value === 'number') {
 function neverReturn(): never {
   throw new Error('error');
 }
+
 function neverReturn2(): never {
   while (true) {
-
   }
 }
 
