@@ -1,4 +1,4 @@
-title: My Presentation
+title: Typescript Advanced
 class: animation-fade
 layout: true
 
@@ -12,68 +12,136 @@ layout: true
 class: impact
 
 # {{title}}
-## With a good subtitle :-)
+## Presentation
 
 ---
 
-# The basics
+# What is TypeScript
 
-## Getting started
+.col-6.space-right[
+TypeScript is a superset of JavaScript which primarily provides strongly typing, classes, interfaces...
 
-Use [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) to write your slides. Don't be afraid, it's really easy!
-
---
-
-## Making points
-
-Look how you can make *some* points:
---
-
-- Create slides with your **favorite text editor**
---
-
-- Focus on your **content**, not the tool
---
-
-- You can finally be **productive**!
+One of the big benefits is to enable IDEs to provide a richer environment for spotting common errors as you type the code.
+]
+.contain[
+![large](./images/typescript-basic.png)
+]
 
 ---
 
-# There's more
+# How TypeScript works
 
-## Syntax highlighting
+Common browsers only knows Javascript, then you need to transpile your TS files to JS.
 
-You can also add `code` to your slides:
-```html
-<div class="impact">Some HTML code</div>
+In Node.js ecosystem there are tools to run TypeScript directly like `ts-node`.
+
+If there are any error, TypeScript will throw it in transpiling time.
+
+Most IDEs show errors when writing, so you earn a lot of time and you are more productive.
+
+TypeScript has a [playground](https://www.typescriptlang.org/play/index.html) where you could try it online.
+
+> There is no pure TypeScript code, it is Javascript + extra features.
+
+---
+
+# Work with TypeScript
+
+.col-6[
+## Install
+
+```bash
+$ yarn add -D typescript
+```
+]
+
+--
+
+.col-6[
+## Initialize
+
+```bash
+$ yarn tsc --init
 ```
 
-## CSS classes
+This will create a `tsconfig.json` with a default configuration to run TypeScript in your project
+]
 
-You can use .alt[shortcut] syntax to apply .big[some style!]
+--
 
-...or just <span class="alt">HTML</span> if you prefer.
+## Compile
+
+.col-5[
+```bash
+$ yarn tsc
+```
+]
+
+.col-2[
+OR
+]
+
+.col-5[
+```bash
+$ yarn tsc file.ts
+```
+]
 
 ---
 
-# And more...
+# Implicit/Explicit types
 
-## 12-column grid layout
+In TypeScript we could be explicit using types. And types could be used implicit.
 
-Use to the included **grid layout** classes to split content easily:
 .col-6[
-  ### Left column
+Implicit type:
 
-  - I'm on the left
-  - It's neat!
-]
-.col-6[
-  ### Right column
+```typescript
+let name = 'MyName';
+```
 
-  - I'm on the right
-  - I love it!
 ]
 
-## Learn the tricks
+.col-6[
+Explicit type:
 
-See the [wiki](https://github.com/gnab/remark/wiki) to learn more of what you can do with .alt[Remark.js]
+```typescript
+let name: string;
+...
+name = 'MyName';
+```
+
+]
+
+If no type is inferred, typescript will assume that is `any`
+
+---
+
+# Types
+
+.col-6[
+## Basic types
+
+- boolean
+- number
+- string
+- void `(function without return)`
+- null/undefined/never
+- any
+- array
+- tuples `(array of diferent types)`
+- object
+- enum
+]
+
+--
+
+.col-6[
+## Advanced types
+
+- Custom types `(class or interface)`
+- Union `(number | string)`
+- Intersection `(Person & Loggable)`
+- Type aliases `(type numString = number | string)`
+- Function as types
+]
