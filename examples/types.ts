@@ -124,6 +124,71 @@ function neverReturn2(): never {
   }
 }
 
+// Extra
+class Point {
+  x: number;
+  y: number;
+}
 
+interface Shape {
+  area(): number;
+}
 
+type Perimeter = {
+  perimeter(): number;
+}
 
+type RectangleShape = Point & Shape & Perimeter;
+
+class Rectangle implements RectangleShape {
+  x = 0;
+  y = 0;
+
+  constructor(x: number, y: number) {
+    this.x = x;
+    this.y = y;
+  }
+
+  area() {
+    return this.x * this.y;
+  }
+
+  perimeter() {
+    return 2 * (this.x + this.y);
+  }
+}
+
+// Interfaces
+interface Box {
+  x: number;
+  y: number;
+}
+
+interface Box {
+  z: number;
+}
+
+const theBox: Box = { x: 1, y: 2, z: 3 };
+
+// Types
+type TBox = {
+  x: number;
+  y: number;
+}
+
+type TBox = {
+  z: number;
+}
+
+const theTBox: TBox = { x: 1, y: 2, z: 3 };
+
+// BAD
+interface Props extends OwnProps, InjectedProps, StoreProps {
+}
+type OwnProps = { ... }
+type StoreProps = { ... }
+
+// GOOD
+type Props = OwnProps & InjectedProps & StoreProps
+type OwnProps = { ... }
+type StoreProps = { ... }

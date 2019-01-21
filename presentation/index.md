@@ -128,9 +128,10 @@ If no type is inferred, typescript will assume that is `any`
 - null/undefined/never
 - any
 - array
-- tuples `(array of diferent types)`
+- tuples `(array different types)`
 - object
 - enum
+
 ]
 
 --
@@ -143,4 +144,13 @@ If no type is inferred, typescript will assume that is `any`
 - Intersection `(Person & Loggable)`
 - Type aliases `(type numString = number | string)`
 - Function as types
+
 ]
+
+---
+
+
+
+
+
+
