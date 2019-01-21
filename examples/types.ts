@@ -28,6 +28,8 @@ anyArray2 = 100;
 // tuples
 let tuple: [string, number] = ['string1', 33];
 tuple = [33, 'string'];
+let tuple2: [string, string] = ['string1', 'string2'];
+tuple2 = ['string', 'string', 'string'];
 
 // enum
 enum Colors {
@@ -86,11 +88,6 @@ userData = {
 
 // complex object
 let complex: { data: number[], output: (a: boolean) => number[] } = {
-  data: [100, 3.3, 44],
-  output: (info: boolean): number[] => this.data,
-};
-
-let complex2: { data: number[], output: (a: boolean) => number[] } = {
   data: [100, 3.3, 44],
   output: (info: boolean): number[] => this.data,
 };
@@ -158,18 +155,6 @@ class Rectangle implements RectangleShape {
   }
 }
 
-// Interfaces
-interface Box {
-  x: number;
-  y: number;
-}
-
-interface Box {
-  z: number;
-}
-
-const theBox: Box = { x: 1, y: 2, z: 3 };
-
 // Types
 type TBox = {
   x: number;
@@ -182,13 +167,3 @@ type TBox = {
 
 const theTBox: TBox = { x: 1, y: 2, z: 3 };
 
-// BAD
-interface Props extends OwnProps, InjectedProps, StoreProps {
-}
-type OwnProps = { ... }
-type StoreProps = { ... }
-
-// GOOD
-type Props = OwnProps & InjectedProps & StoreProps
-type OwnProps = { ... }
-type StoreProps = { ... }

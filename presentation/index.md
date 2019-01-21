@@ -149,8 +149,97 @@ If no type is inferred, typescript will assume that is `any`
 
 ---
 
+# Classes
 
+```typescript
+class Person {
+  readonly name: string;
+  private static _instance: Person;
+  private constructor(name: string, public username: string) {
+    this.name = name;
+  }
+  static getInstance(name: string, username: string): Person {
+    if (!this._instance) {
+      this._instance = new Person(name, username);
+    }
+    return this._instance;
+  }
+}
+```
 
+It also have `static` parameters and methods, `abstract` classes, `private constructors` (singleton) and `readonly` parameters
 
+---
 
+# Namespaces
 
+Namespaces are simply named JavaScript objects in the global namespace.
+
+This makes namespaces a very simple construct to use.
+
+They can span multiple files. And namespace inside other namespaces.
+
+Namespaces can be a good way to structure your code in a JavaScript Application.
+
+```typescript
+/// <reference path="myNamespace.ts" />
+namespace MyMath {
+  const PI = 3.14;
+  
+  export function calc(diameter: number) {
+    return diameter * PI;
+  }
+}
+```
+
+---
+
+# Modules
+
+Just like namespaces, modules can contain both code and declarations. The main difference is that modules declare their dependencies.
+
+For large applications modules provide for better `code reuse`, `stronger isolation` and better tooling support for `bundling`.
+
+It is also worth noting that, for Node.js applications, modules are the default and the recommended approach to structure your code.
+
+Starting with ECMAScript 2015, modules are native part of the language, and should be supported by all compliant engine implementations. Thus, for new projects modules would be the recommended code organization mechanism.
+
+```typescript
+import { Component } from '@angular/core';
+```
+
+---
+
+# Namespaces vs Modules
+
+.col-6[
+.center[
+## Namespaces
+]
+- Organize app with JS Objects
+- Can be split up over multiple files
+- No module loader required
+- Dependencies get difficult to manage in bigger apps
+]
+
+.col-6[
+.center[
+## Modules
+]
+.space-left[
+- Organize app with real modules
+- Can be split up over multiple files
+- Module loader required
+- Explicit dependency declaration
+]
+]
+
+---
+
+# Interfaces
+
+Interfaces fill the role of naming these types, and are a powerful way of defining contracts within your code as well as contracts with code outside of your project.
+
+```typescript
+
+```
