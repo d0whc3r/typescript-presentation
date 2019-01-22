@@ -124,7 +124,7 @@ If no type is inferred, typescript will assume that is `any`
 - boolean
 - number
 - string
-- void `(function without return)`
+- Function/void
 - null/undefined/never
 - any
 - array
@@ -240,6 +240,44 @@ import { Component } from '@angular/core';
 
 Interfaces fill the role of naming these types, and are a powerful way of defining contracts within your code as well as contracts with code outside of your project.
 
-```typescript
+> See examples
 
+---
+
+# Generics
+
+## Simple
+
+```typescript
+function echo(data: any) {
+  return data;
+}
+console.log(echo('hello').length);
+console.log(echo(33).length);
+console.log(echo({name: 'my name', age: 22}).length);
 ```
+
+--
+
+We want to create function that accept many kind of types, without loosing type  and without using `any`.
+
+---
+
+# Decorators
+
+Decorators provide a way to add both annotations and a meta-programming syntax for class declarations and members.
+
+Decorators are a stage 2 proposal for JavaScript and are available as an experimental feature of TypeScript.
+
+Exists 4 decorator types
+
+- Class decorator
+- Method decorator
+- Property decorator
+- Parameter decorator
+
+---
+
+# Third party libraries
+
+@types

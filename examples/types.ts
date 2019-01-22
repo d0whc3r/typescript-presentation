@@ -121,6 +121,7 @@ function neverReturn2(): never {
   }
 }
 
+// ---------------------------------------------------------------------------------------------------
 // Extra
 class Point {
   x: number;
@@ -155,6 +156,7 @@ class Rectangle implements RectangleShape {
   }
 }
 
+// ---------------------------------------------------------------------------------------------------
 // Types
 type TBox = {
   x: number;
@@ -166,4 +168,3 @@ type TBox = {
 }
 
 const theTBox: TBox = { x: 1, y: 2, z: 3 };
-
