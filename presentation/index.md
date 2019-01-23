@@ -313,4 +313,6 @@ Also, you could create your own description files for other js files. Using a `f
 
 ---
 
+.center[
 # End
+]
