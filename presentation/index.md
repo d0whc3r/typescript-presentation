@@ -304,8 +304,11 @@ Also, you could create your own description files for other js files. Using a `f
 # Documentation
 
 [Typescript playground](http://www.typescriptlang.org/play/)
+
 [Basic documentation](http://www.typescriptlang.org)
+
 [TSLint](https://palantir.github.io/tslint/)
+
 [@Types -DefinitelyTyped-](https://github.com/DefinitelyTyped/DefinitelyTyped)
 
 ---
