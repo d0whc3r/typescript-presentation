@@ -42,6 +42,8 @@ enum Colors {
 let color = Colors.BLUE; // color = 'BLUE'
 color = Colors.BLACK; // color = 0
 color = Colors.GREEN; // color = 4
+// WTF
+color = 50;
 
 // any
 let some: any = 'some string';

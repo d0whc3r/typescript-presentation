@@ -1,6 +1,6 @@
 interface Person {
   name: string;
-  age?: number;
+  male?: boolean;
 
   [key: string]: any;
 
@@ -13,7 +13,7 @@ function greet(person: Person) {
 
 const person: Person = {
   name: 'myName',
-  // age: 22,
+  // male: true,
   hobbies: ['hobbie1', 'hobbie2'],
   greet(oneName: string): void {
     console.log(`hello ${oneName}`);
@@ -37,7 +37,6 @@ class CPerson implements Person {
 const classPerson = new CPerson();
 classPerson.name = 'My Name';
 classPerson.greet('Some name');
-
 
 // ---------------------------------------------------------------------------------------------------
 // Inheritance
@@ -63,7 +62,13 @@ interface Box {
   z: number;
 }
 
-const theBox: Box = { x: 1, y: 2, z: 3 };
+const theBox: Box = { x: 1, y: 2, z: 3, a: 5 } as Box;
+
+function testBox(param: Box) {
+  console.log(param);
+}
+
+testBox({ x: 0, y: 1, z: 2 });
 
 // ---------------------------------------------------------------------------------------------------
 // Extra

@@ -278,6 +278,36 @@ Exists 4 decorator types
 
 ---
 
-# Third party libraries
+# Third-party libraries
 
-@types
+If you need to import an external library that is not implemented in typescript, there is a repository where the community has created a type implementation for a huge variety of libraries.
+
+.col-8[
+## Definitelytyped
+
+- [http://definitelytyped.org/](http://definitelytyped.org/)
+- [https://github.com/DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)
+]
+
+.col-4[
+### Examples:
+
+- @types/node
+- @types/jquery
+- @types/jest
+]
+
+Also, you could create your own description files for other js files. Using a `file.d.ts`, more info: [https://www.typescriptlang.org/docs/handbook/declaration-files/by-example.html](https://www.typescriptlang.org/docs/handbook/declaration-files/by-example.html) 
+
+---
+
+# Documentation
+
+[Typescript playground](http://www.typescriptlang.org/play/)
+[Basic documentation](http://www.typescriptlang.org)
+[TSLint](https://palantir.github.io/tslint/)
+[@Types -DefinitelyTyped-](https://github.com/DefinitelyTyped/DefinitelyTyped)
+
+---
+
+# End

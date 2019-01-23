@@ -39,6 +39,7 @@ const show2: GenericType = betterEcho;
 class SimpleClass<T extends (number | string)> {
   baseValue: T;
   multi: T;
+
   calc() {
     return +this.baseValue * +this.multi;
   }
@@ -58,12 +59,24 @@ simple.calc();
 class MultiClass<T, U extends (number | string)> {
   baseValue: T;
   multi: U;
+
   calc() {
     return +this.baseValue * +this.multi;
   }
 }
+
 const multi = new MultiClass<string, number>();
 multi.baseValue = '20';
 multi.multi = 20;
+
+// ---------------------------------------------------------------------------------------------------
+// Extra
+// ---------------------------------------------------------------------------------------------------
+function getID<T extends { id: number }>(obj: T) {
+  return obj.id;
+}
+
+getID({ id: 'string' });
+[{ id: 1 }, { id: 'a' }, { id: 'string' }].map(getID);
 
 
